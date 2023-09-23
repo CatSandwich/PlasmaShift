@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4261051860963988689}
   - component: {fileID: 5088207506118073950}
   - component: {fileID: 1787786707227480413}
+  - component: {fileID: 7744075581466830070}
   m_Layer: 0
   m_Name: SquareObstacle
   m_TagString: Untagged
@@ -216,3 +217,16 @@ MonoBehaviour:
   Rigidbody: {fileID: 3305820555013972129}
   MinVelocity: {x: -1, y: 0}
   MaxVelocity: {x: -1, y: 0}
+--- !u!114 &7744075581466830070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2149725886650436907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7054e2d0460063b44a2b7ff9dd782e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 1
