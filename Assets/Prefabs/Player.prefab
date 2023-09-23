@@ -13,7 +13,10 @@ GameObject:
   - component: {fileID: 617284229957583276}
   - component: {fileID: 1315972923677826630}
   - component: {fileID: 4383128381426763402}
-  m_Layer: 0
+  - component: {fileID: 8699635422346779952}
+  - component: {fileID: 8900105201538507195}
+  - component: {fileID: 8945623911890270374}
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,5 +165,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rigidbody: {fileID: 1315972923677826630}
-  Acceleration: 1
+  Acceleration: 10
   MaxSpeed: 5
+--- !u!114 &8699635422346779952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453844037705846398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa140a72b50a8247b427570e255f09b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageReceived:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8699635422346779952}
+        m_TargetAssemblyTypeName: Damage.DamageReceiver, Assembly-CSharp
+        m_MethodName: LogDamage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8900105201538507195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453844037705846398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e45098cdf3a0d4da50de6935dff39c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sender: {fileID: 8945623911890270374}
+--- !u!114 &8945623911890270374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453844037705846398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eba920ebb6981104e81f00d3172159f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 5
