@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 8699635422346779952}
   - component: {fileID: 8900105201538507195}
   - component: {fileID: 8945623911890270374}
+  - component: {fileID: 4363037442389493923}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,6 +195,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4363037442389493923}
+        m_TargetAssemblyTypeName: Player.Health, Assembly-CSharp
+        m_MethodName: TakeDamage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8900105201538507195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,3 +236,20 @@ MonoBehaviour:
   Mask:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &4363037442389493923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453844037705846398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 505c35e36bfb0ad41974f47aa790d4ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentHealth: 5
+  AutoDie: 1
+  Die:
+    m_PersistentCalls:
+      m_Calls: []

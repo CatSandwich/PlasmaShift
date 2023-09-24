@@ -5,17 +5,15 @@ namespace States
 {
     [CreateAssetMenu(menuName = "States/Title")]
     public class TitleState : GameStateMachine.State
-    {
-        public Object TitleScene;
-        
+    {        
         public override void OnEnter(GameStateMachine machine)
         {
-            SceneManager.LoadSceneAsync(TitleScene.name, LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync("Title", LoadSceneMode.Additive);
         }
 
         public override void OnExit()
         {
-            SceneManager.UnloadSceneAsync(TitleScene.name);
+            SceneManager.UnloadSceneAsync("Title");
         }
     }
 }
