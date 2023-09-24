@@ -10,7 +10,7 @@ namespace States
     public class MainState : GameStateMachine.State
     {
         /// The state to push when the game ends.
-        public GameStateMachine.State NextState;
+        public LeaderboardState NextState;
 
         /// The player's score.
         public int Score
@@ -53,6 +53,7 @@ namespace States
 
         private void PlayerDied()
         {
+            NextState.LastScore = Score;
             Machine.PushState(NextState);
         }
 
