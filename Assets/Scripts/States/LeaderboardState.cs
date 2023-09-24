@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Leaderboard;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -31,7 +32,8 @@ namespace States
         private async void SceneLoaded(AsyncOperation obj)
         {
             await Leaderboard.AddEntry("You", LastScore);
-            Debug.Log(Leaderboard.GetEntries());
+            Debug.Log(string.Join(", ", (await Leaderboard.GetEntries())
+                .Select(entry => $"{entry.Name}: {entry.Score}")));
         }
     }
 }

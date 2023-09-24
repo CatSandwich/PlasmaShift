@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -23,6 +24,7 @@ namespace Leaderboard
                 Debug.LogWarning("No leaderboard found. Creating...");
                 return new LocalLeaderboard
                 {
+                    FilePath = filePath,
                     Entries = new List<Entry>
                     {
                         new() { Name = "Josh", Score = 10000 },
@@ -31,11 +33,13 @@ namespace Leaderboard
                     }
                 };
             }
+
+            var data = JsonUtility.FromJson<LeaderboardData>(await File.ReadAllTextAsync(filePath));
             
             return new LocalLeaderboard
             {
                 FilePath = filePath,
-                Entries = JsonUtility.FromJson<List<Entry>>(await File.ReadAllTextAsync(filePath))
+                Entries = data.Entries.ToList()
             };
         }
 
@@ -57,13 +61,26 @@ namespace Leaderboard
                 Score = score
             });
 
-            await File.WriteAllTextAsync(FilePath, JsonUtility.ToJson(Entries));
+            await File.WriteAllTextAsync(FilePath, JsonUtility.ToJson(new LeaderboardData()
+            {
+                Entries = Entries.ToArray()
+            }));
         }
 
+        [Serializable]
         public class Entry : ILeaderboardEntry
         {
-            public string Name { get; set; }
-            public int Score { get; set; }
+            public string Name;
+            public int Score;
+
+            string ILeaderboardEntry.Name => Name;
+            int ILeaderboardEntry.Score => Score;
+        }
+
+        [Serializable]
+        public class LeaderboardData
+        {
+            public Entry[] Entries;
         }
     }
 }
