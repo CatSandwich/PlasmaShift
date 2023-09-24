@@ -735,7 +735,7 @@ MonoBehaviour:
   MinSpawnDelay: 1
   MaxSpawnDelay: 3
   EnemyPrefabs:
-  - {fileID: 7751234550950408378, guid: 7a6ff6a549963334db9eee38a526ad4e, type: 3}
+  - {fileID: 6016129691802782246, guid: 9e4cb7efcc5bc10498dc152bf56b6726, type: 3}
   EnemySpawned:
     m_PersistentCalls:
       m_Calls: []
