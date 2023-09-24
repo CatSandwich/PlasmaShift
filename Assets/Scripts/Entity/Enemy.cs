@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Entity
 {
@@ -10,5 +11,14 @@ namespace Entity
 
         /// Denotes if this enemy can be spawned at any given time.
         public virtual bool CanBeSpawned { get; protected set; } = true;
+
+        /// Invoked when this enemy dies.
+        public UnityEvent Die;
+
+        /// Invokes <see cref="Die"/>.
+        public void InvokeDie()
+        {
+            Die.Invoke();
+        }
     }
 }
