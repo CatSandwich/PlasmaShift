@@ -53,7 +53,7 @@ namespace States
 
         private void EnemyDied(Enemy enemy)
         {
-            Score += 50;
+            Score += enemy.Score;
         }
     }
 }

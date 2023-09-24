@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6640816466516217420}
   - component: {fileID: 3305820555013972129}
   - component: {fileID: 7751234550950408378}
-  - component: {fileID: 4261051860963988689}
   - component: {fileID: 5088207506118073950}
   - component: {fileID: 1787786707227480413}
   - component: {fileID: 1396293886682632176}
@@ -178,21 +177,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <DifficultyUnits>k__BackingField: 1
+  <Score>k__BackingField: 50
   Die:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4261051860963988689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2149725886650436907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64b70f3680a19e64fa7cf5f00948c9ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5088207506118073950
 MonoBehaviour:
   m_ObjectHideFlags: 0
