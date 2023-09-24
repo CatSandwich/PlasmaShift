@@ -45,9 +45,10 @@ Shader "Unlit/Alien"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                float f = pow(voronoi(i.uv * 2).x, 7);
+                float f = pow(voronoi(i.uv * 2 + _Time.y * 0.2).x, 7);
                 float t = (i.uv.x + i.uv.y * 0.3) * 0.4 + _Time.y * 0.2;
                 float3 col = palette(t, a, b, c, d) * f * 4;
+                col += pow(max(max(i.uv.y, 1 - i.uv.y), max(i.uv.x, 1 - i.uv.x)), 20) * 0.75;
                 return float4(col, 1);
             }
             ENDCG
