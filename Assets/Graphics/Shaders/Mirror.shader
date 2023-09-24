@@ -50,7 +50,7 @@
                 float flicker = sin((_Time.y * 50) % 2);
                 float3 hitCol = float3(pow(dist, 1.7), 0, 0) * flicker;
                 hitCol += flicker * pow(dist, 6);
-                hitCol *= 2;
+                // hitCol *= 2;
 
                 float3 col = lerp(ambientCol, hitCol, _Hit);
 
