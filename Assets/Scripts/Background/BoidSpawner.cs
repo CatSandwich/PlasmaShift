@@ -6,11 +6,13 @@ public class BoidSpawner : MonoBehaviour
 {
     public GameObject boid;
 
+    static float boidSpread = 1.3f;
+
     void Start()
     {
-        for (int x = 0; x < ResolutionHelper.cameraWorldBounds.x; x++)
+        for (float x = 0; x < ResolutionHelper.cameraWorldBounds.x; x += boidSpread)
         {
-            for (int y = 0; y < ResolutionHelper.cameraWorldBounds.y; y++)
+            for (float y = 0; y < ResolutionHelper.cameraWorldBounds.y; y += boidSpread)
             {
                 var newBoid = Instantiate(boid, transform);
                 newBoid.transform.position = new Vector3(

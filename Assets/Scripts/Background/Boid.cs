@@ -43,7 +43,7 @@ public class Boid : MonoBehaviour
             transform.position.y > ResolutionHelper.cameraWorldBounds.y + config.screenPadding
             )
 		{
-            rb.velocity = -(new Vector2(transform.position.x, transform.position.y) - ResolutionHelper.cameraWorldBounds / 2).normalized;
+            rb.velocity = -(new Vector2(transform.position.x, transform.position.y) - ResolutionHelper.cameraWorldBounds / 2).normalized * config.speed;
 		}
 
 		else

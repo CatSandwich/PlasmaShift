@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41e4c96774fb49b49a590b0f6b886e30, type: 3}
   m_Name: BoidWeights
   m_EditorClassIdentifier: 
-  avoidanceWeight: 6.79
-  alignmentWeight: 1.78
-  cohesionWeight: 0.07
-  screenPadding: 2.36
+  avoidanceWeight: 1.91
+  alignmentWeight: 1.5
+  cohesionWeight: 1.48
+  screenPadding: 0.21
   speed: 0.3
