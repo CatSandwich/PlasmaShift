@@ -398,11 +398,11 @@ MonoBehaviour:
   littleVein: {fileID: 4007332966608914324, guid: 876cbe0d71aba5947904a99ce28fb192, type: 3}
   bigVein: {fileID: 5627734870448875718, guid: b11037a218378a941997ddbda27f8cb3, type: 3}
   littleVeinFreq: 13.7
-  littleVeinSpeed: 0.45
+  littleVeinSpeed: 0.24
   littleVeinSpawn: 28.48
-  bigVeinFreq: 10
-  bigVeinSpeed: 10
-  bigVeinSpawn: 20
+  bigVeinFreq: 38.9
+  bigVeinSpeed: 0.72
+  bigVeinSpawn: 28.48
   littleVeins: []
   bigVeins: []
 --- !u!1 &1825112048

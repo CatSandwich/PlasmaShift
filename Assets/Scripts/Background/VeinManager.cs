@@ -33,7 +33,8 @@ public class VeinManager : MonoBehaviour
     {
         littleVeinTimer += Time.deltaTime;
         bigVeinTimer += Time.deltaTime;
-
+        
+        // Little Vein
         if ( littleVeinTimer > littleVeinFreq / littleVeinSpeed)
         {
             littleVeinTimer = 0;
@@ -55,5 +56,28 @@ public class VeinManager : MonoBehaviour
                 Destroy(vein);
             }
         }
-    }
+
+		// Big Vein
+		if (bigVeinTimer > bigVeinFreq / bigVeinSpeed)
+		{
+			bigVeinTimer = 0;
+
+			var vein = Instantiate(bigVein, transform);
+			vein.transform.position += new Vector3(bigVeinSpawn, 0, 0);
+			bigVeins.Add(vein);
+		}
+
+		for (int i = 0; i < bigVeins.Count; i++)
+		{
+			var vein = bigVeins[i];
+			vein.transform.position += new Vector3(-bigVeinSpeed * Time.deltaTime, 0, 0);
+
+			if (vein.transform.position.x < -bigVeinSpawn)
+			{
+				i--;
+				bigVeins.Remove(vein);
+				Destroy(vein);
+			}
+		}
+	}
 }
