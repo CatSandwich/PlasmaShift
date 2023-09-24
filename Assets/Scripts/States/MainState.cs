@@ -1,5 +1,6 @@
 using Entity;
 using Player;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,9 +13,15 @@ namespace States
         public GameStateMachine.State NextState;
 
         /// The player's score.
-        public int Score { get; set; }
+        public int Score
+        {
+            get => ScoreBacking;
+            set => ScoreText.text = $"Score: {ScoreBacking = value}";
+        }
+        private int ScoreBacking;
         
         private GameStateMachine Machine;
+        private TextMeshProUGUI ScoreText;
         
         public override void OnEnter(GameStateMachine machine)
         {
@@ -39,6 +46,9 @@ namespace States
             FindObjectOfType<EnemySpawner>()
                 .EnemySpawned
                 .AddListener(EnemySpawned);
+
+            ScoreText = GameObject.FindWithTag("ScoreText")
+                .GetComponent<TextMeshProUGUI>();
         }
 
         private void PlayerDied()
