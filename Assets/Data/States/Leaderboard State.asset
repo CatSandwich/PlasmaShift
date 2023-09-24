@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15afd6f0fd8ed0b47b6bcc1fb4769220, type: 3}
-  m_Name: Main State
+  m_Script: {fileID: 11500000, guid: 25d9c237207d8424eab37ddc3691360d, type: 3}
+  m_Name: Leaderboard State
   m_EditorClassIdentifier: 
-  NextState: {fileID: 11400000, guid: 88a2661ff64c3e144a0700e0919636d9, type: 2}
+  NextState: {fileID: 11400000, guid: 8e48a95ab48a9834e88276dbc15483b6, type: 2}

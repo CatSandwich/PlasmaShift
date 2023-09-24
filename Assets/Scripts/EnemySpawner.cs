@@ -19,6 +19,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 Enemy enemy = EnemyManager.Spawn(prefab);
                 enemy.transform.position = transform.position;
+                enemy.transform.SetParent(transform, true);
             }
 
             yield return new WaitForSeconds(Random.Range(MinSpawnDelay, MaxSpawnDelay));
