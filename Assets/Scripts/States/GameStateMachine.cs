@@ -1,4 +1,5 @@
 using System.Linq;
+using Leaderboard;
 using UnityEngine;
 
 namespace States
@@ -6,6 +7,8 @@ namespace States
     public class GameStateMachine : MonoBehaviour
     {
         public State InitialState;
+
+        public ILeaderboard Leaderboard;
         
         private State CurrentState;
 
@@ -37,6 +40,9 @@ namespace States
         {
             DontDestroyOnLoad(gameObject);
             PushState(InitialState);
+
+            LocalLeaderboard.LoadFrom($@"{Application.persistentDataPath}\leaderboard.json")
+                .ContinueWith(task => Leaderboard = task.Result);
         }
 
         private void Update()

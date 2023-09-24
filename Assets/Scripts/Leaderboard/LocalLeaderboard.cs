@@ -18,6 +18,20 @@ namespace Leaderboard
 
         public static async Task<LocalLeaderboard> LoadFrom(string filePath)
         {
+            if (!File.Exists(filePath))
+            {
+                Debug.LogWarning("No leaderboard found. Creating...");
+                return new LocalLeaderboard
+                {
+                    Entries = new List<Entry>
+                    {
+                        new() { Name = "Josh", Score = 10000 },
+                        new() { Name = "Elijah", Score = 8000 },
+                        new() { Name = "Evan", Score = 6000 }
+                    }
+                };
+            }
+            
             return new LocalLeaderboard
             {
                 FilePath = filePath,
@@ -29,6 +43,7 @@ namespace Leaderboard
         {
             IReadOnlyList<ILeaderboardEntry> entries = new ReadOnlyCollection<ILeaderboardEntry>(Entries
                 .Cast<ILeaderboardEntry>()
+                .OrderByDescending(entry => entry.Score)
                 .ToList());
             
             return Task.FromResult(entries);
