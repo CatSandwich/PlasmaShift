@@ -27,6 +27,11 @@ namespace Player
             {
                 Rigidbody.velocity = Rigidbody.velocity.normalized * MaxSpeed;
             }
-        }
+
+			// Face towards the mouse
+			var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            var angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+		}
     }
 }
