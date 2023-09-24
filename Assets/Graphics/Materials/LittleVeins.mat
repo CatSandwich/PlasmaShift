@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Veins
+  m_Name: LittleVeins
   m_Shader: {fileID: 4800000, guid: bf184f7ec28fbe746ad6f1bde414e5e7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -66,13 +66,13 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Far: 412.9
+    - _Far: 316.3
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
-    - _Near: 322.5
+    - _Near: 284.3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _Size: 1
