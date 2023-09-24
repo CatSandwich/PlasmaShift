@@ -484,63 +484,6 @@ MonoBehaviour:
   bigVeinSpawn: 28.48
   littleVeins: []
   bigVeins: []
---- !u!1001 &1649151676
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1504177044757750359, guid: 9e4cb7efcc5bc10498dc152bf56b6726, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 1504177044757750359, guid: 9e4cb7efcc5bc10498dc152bf56b6726, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 1504177044757750359, guid: 9e4cb7efcc5bc10498dc152bf56b6726, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 1504177044757750359, guid: 9e4cb7efcc5bc10498dc152bf56b6726, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.8956069
-      objectReference: {fileID: 0}
-    - target: {fileID: 1504177044757750359, guid: 9e4cb7efcc5bc10498dc152bf56b6726, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.26470512
-      objectReference: {fileID: 0}
-    - target: {fileID: 1504177044757750359, guid: 9e4cb7efcc5bc10498dc152bf56b6726, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.35359827
-      objectReference: {fileID: 0}
-    - target: {fileID: 1504177044757750359, guid: 9e4cb7efcc5bc10498dc152bf56b6726, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.05280058
-      objectReference: {fileID: 0}
-    - target: {fileID: 1504177044757750359, guid: 9e4cb7efcc5bc10498dc152bf56b6726, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -30.763
-      objectReference: {fileID: 0}
-    - target: {fileID: 1504177044757750359, guid: 9e4cb7efcc5bc10498dc152bf56b6726, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 44.793
-      objectReference: {fileID: 0}
-    - target: {fileID: 1504177044757750359, guid: 9e4cb7efcc5bc10498dc152bf56b6726, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -6.188
-      objectReference: {fileID: 0}
-    - target: {fileID: 5774072157036200105, guid: 9e4cb7efcc5bc10498dc152bf56b6726, type: 3}
-      propertyPath: m_Name
-      value: Scout
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e4cb7efcc5bc10498dc152bf56b6726, type: 3}
 --- !u!1 &1825112048
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,4 +659,3 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 1825112049}
-  - {fileID: 1649151676}
