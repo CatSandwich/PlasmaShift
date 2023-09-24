@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Entity;
 using Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,7 +8,11 @@ namespace States
     [CreateAssetMenu(fileName = "Main State", menuName = "States/Main")]
     public class MainState : GameStateMachine.State
     {
+        /// The state to push when the game ends.
         public GameStateMachine.State NextState;
+
+        /// The player's score.
+        public int Score { get; set; }
         
         private GameStateMachine Machine;
         
@@ -28,12 +31,29 @@ namespace States
 
         private void MainSceneLoaded(AsyncOperation op)
         {
-            GameObject player = GameObject.FindWithTag("Player");
+            GameObject.FindWithTag("Player")
+                .GetComponent<Health>()
+                .Die
+                .AddListener(PlayerDied);
+            
+            FindObjectOfType<EnemySpawner>()
+                .EnemySpawned
+                .AddListener(EnemySpawned);
+        }
 
-            player.GetComponent<Health>().Die.AddListener(() =>
-            {
-                Machine.PushState(NextState);
-            });
+        private void PlayerDied()
+        {
+            Machine.PushState(NextState);
+        }
+
+        private void EnemySpawned(Enemy enemy)
+        {
+            enemy.Die.AddListener(() => EnemyDied(enemy));
+        }
+
+        private void EnemyDied(Enemy enemy)
+        {
+            Score += 50;
         }
     }
 }
