@@ -11,10 +11,12 @@ public class UIHoverAndClick : MonoBehaviour, IPointerEnterHandler
 
 	public void OnConfirm()
 	{
+		if (!UIConfirmSound) return;
 		AudioSource.PlayClipAtPoint(UIConfirmSound, Camera.main.transform.position);
 	}
 	public void OnPointerEnter(PointerEventData eventData)
 	{
+		if (!UIEnterSound) return;
 		AudioSource.PlayClipAtPoint(UIEnterSound, Camera.main.transform.position);
 	}
 }
