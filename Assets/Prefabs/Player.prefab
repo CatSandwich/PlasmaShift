@@ -273,6 +273,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fa021d329ab431e43811808be263ecd3, type: 3}
   damagePitchMin: 0.9
   damagePitchMax: 1.1
+  deathClip: {fileID: 8300000, guid: cbad7cc3d9e191d4e83fa94018b09321, type: 3}
 --- !u!82 &-581524459863335321
 AudioSource:
   m_ObjectHideFlags: 0
