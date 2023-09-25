@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <DifficultyUnits>k__BackingField: 2
-  <Score>k__BackingField: 200
+  <Score>k__BackingField: 250
   Die:
     m_PersistentCalls:
       m_Calls: []
@@ -643,7 +643,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17c923b798484f54ba74ac12d7d82961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1
   particle: {fileID: 2320236585053377963, guid: 3f0391bf210205d4f89e753f8acb100d, type: 3}
 --- !u!114 &597261536780277421
 MonoBehaviour:

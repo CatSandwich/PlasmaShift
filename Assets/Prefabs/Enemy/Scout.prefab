@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <DifficultyUnits>k__BackingField: 1
-  <Score>k__BackingField: 50
+  <Score>k__BackingField: 100
   Die:
     m_PersistentCalls:
       m_Calls: []
