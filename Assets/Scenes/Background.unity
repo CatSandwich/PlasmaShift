@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &430958255 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4995173274492039804, guid: b11037a218378a941997ddbda27f8cb3, type: 3}
-  m_PrefabInstance: {fileID: 74876433216457193}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,9 +452,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1861363468}
-  - {fileID: 430958255}
+  m_Children: []
   m_Father: {fileID: 1825112049}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1593874869
@@ -647,141 +640,6 @@ Transform:
   - {fileID: 1628956344}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1861363468 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4384035114084965678, guid: 876cbe0d71aba5947904a99ce28fb192, type: 3}
-  m_PrefabInstance: {fileID: 5694199926120735778}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &74876433216457193
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1593874868}
-    m_Modifications:
-    - target: {fileID: 4995173274492039804, guid: b11037a218378a941997ddbda27f8cb3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.866333
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995173274492039804, guid: b11037a218378a941997ddbda27f8cb3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 30.162392
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995173274492039804, guid: b11037a218378a941997ddbda27f8cb3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 192.6064
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995173274492039804, guid: b11037a218378a941997ddbda27f8cb3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995173274492039804, guid: b11037a218378a941997ddbda27f8cb3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995173274492039804, guid: b11037a218378a941997ddbda27f8cb3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995173274492039804, guid: b11037a218378a941997ddbda27f8cb3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995173274492039804, guid: b11037a218378a941997ddbda27f8cb3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995173274492039804, guid: b11037a218378a941997ddbda27f8cb3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995173274492039804, guid: b11037a218378a941997ddbda27f8cb3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5627734870448875718, guid: b11037a218378a941997ddbda27f8cb3, type: 3}
-      propertyPath: m_Name
-      value: Big Veins
-      objectReference: {fileID: 0}
-    - target: {fileID: 5627734870448875718, guid: b11037a218378a941997ddbda27f8cb3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b11037a218378a941997ddbda27f8cb3, type: 3}
---- !u!1001 &5694199926120735778
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1593874868}
-    m_Modifications:
-    - target: {fileID: 4007332966608914324, guid: 876cbe0d71aba5947904a99ce28fb192, type: 3}
-      propertyPath: m_Name
-      value: Little Veins
-      objectReference: {fileID: 0}
-    - target: {fileID: 4007332966608914324, guid: 876cbe0d71aba5947904a99ce28fb192, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384035114084965678, guid: 876cbe0d71aba5947904a99ce28fb192, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.8247986
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384035114084965678, guid: 876cbe0d71aba5947904a99ce28fb192, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 6.8247986
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384035114084965678, guid: 876cbe0d71aba5947904a99ce28fb192, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.8868437
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384035114084965678, guid: 876cbe0d71aba5947904a99ce28fb192, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 13.815392
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384035114084965678, guid: 876cbe0d71aba5947904a99ce28fb192, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 289.7864
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384035114084965678, guid: 876cbe0d71aba5947904a99ce28fb192, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.84673095
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384035114084965678, guid: 876cbe0d71aba5947904a99ce28fb192, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384035114084965678, guid: 876cbe0d71aba5947904a99ce28fb192, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.5320214
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384035114084965678, guid: 876cbe0d71aba5947904a99ce28fb192, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384035114084965678, guid: 876cbe0d71aba5947904a99ce28fb192, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384035114084965678, guid: 876cbe0d71aba5947904a99ce28fb192, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -64.284
-      objectReference: {fileID: 0}
-    - target: {fileID: 4384035114084965678, guid: 876cbe0d71aba5947904a99ce28fb192, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 876cbe0d71aba5947904a99ce28fb192, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
