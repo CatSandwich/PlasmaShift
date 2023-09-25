@@ -11,7 +11,7 @@ namespace Entity
 
         /// How much score the player earns for killing this enemy.
         [field: SerializeField]
-        public virtual int Score { get; protected set; } = 50;
+        public virtual int Score { get; set; } = 50;
 
         /// Denotes if this enemy can be spawned at any given time.
         public virtual bool CanBeSpawned { get; protected set; } = true;
