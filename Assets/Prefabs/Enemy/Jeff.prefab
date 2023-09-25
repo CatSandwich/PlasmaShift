@@ -409,6 +409,7 @@ GameObject:
   - component: {fileID: 6742854160396535927}
   - component: {fileID: 6692477979471550799}
   - component: {fileID: 1544710629901501743}
+  - component: {fileID: 477769400473923335}
   m_Layer: 6
   m_Name: Jeff
   m_TagString: Untagged
@@ -522,6 +523,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Player.Health, Assembly-CSharp
         m_MethodName: TakeDamage
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 477769400473923335}
+        m_TargetAssemblyTypeName: SpawnParticle, Assembly-CSharp
+        m_MethodName: Run
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -701,6 +714,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &477769400473923335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5774072157036200105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17c923b798484f54ba74ac12d7d82961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1
+  particle: {fileID: 2320236585053377963, guid: 3f0391bf210205d4f89e753f8acb100d, type: 3}
 --- !u!1 &5794212608096824511
 GameObject:
   m_ObjectHideFlags: 0
