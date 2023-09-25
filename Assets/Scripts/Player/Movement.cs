@@ -8,6 +8,9 @@ namespace Player
 
         public float Acceleration;
         public float MaxSpeed;
+        /// How much speed (fraction %) the player will lose over one second.
+        public float SpeedFalloffFactor;
+        public float ChangeDirectionFactor;
         
         public void Update()
         {
@@ -18,7 +21,15 @@ namespace Player
             if (Input.GetKey(KeyCode.S)) input += Vector2.down;
             if (Input.GetKey(KeyCode.D)) input += Vector2.right;
             input.Normalize();
-
+            
+            Rigidbody.velocity *= (1 - SpeedFalloffFactor * Time.deltaTime);
+            
+            // Apply ChangeDirectionFactor.
+            if (Mathf.Abs(Vector2.SignedAngle(Rigidbody.velocity, input)) > 90f)
+            {
+                input *= ChangeDirectionFactor;
+            }
+            
             // Apply input.
             Rigidbody.velocity += input * (Acceleration * Time.deltaTime);
 
