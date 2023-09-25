@@ -30,6 +30,7 @@ namespace Player
                 //We are now shooting
                 lastShootTime = Time.time;
                 duringAnimation = true;
+                ScreenShake.StartShake();
 				Vector3 click = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 
                 //Audio
