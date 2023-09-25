@@ -46,7 +46,7 @@ namespace States
             {
                 LeaderboardEntry uiEntry = Instantiate(EntryPrefab, leaderboard);
                 leaderboard.sizeDelta += Vector2.up * EntryPrefab.GetComponent<RectTransform>().sizeDelta.y;
-                uiEntry.Name.text = entry.Name;
+                uiEntry.Name.text = entry.Name.ToLower();
                 uiEntry.Score.text = entry.Score.ToString();
             }
 
