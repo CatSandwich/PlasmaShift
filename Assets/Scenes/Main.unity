@@ -436,6 +436,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1850182262551599808, guid: 9476389871574ed459b798a47508134f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4457
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850182262551599808, guid: 9476389871574ed459b798a47508134f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4457
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850182262551599808, guid: 9476389871574ed459b798a47508134f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4457
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850182262551599808, guid: 9476389871574ed459b798a47508134f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1
       objectReference: {fileID: 0}
@@ -475,6 +487,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3532706873544043407, guid: 9476389871574ed459b798a47508134f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 54.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532706873544043407, guid: 9476389871574ed459b798a47508134f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.67567
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532706873544043407, guid: 9476389871574ed459b798a47508134f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.747
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532706873544043407, guid: 9476389871574ed459b798a47508134f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 27.398182
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532706873544043407, guid: 9476389871574ed459b798a47508134f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590672578019488228, guid: 9476389871574ed459b798a47508134f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1d642d55944c7a344adf2ccc8156ff97, type: 3}
     - target: {fileID: 6453844037705846398, guid: 9476389871574ed459b798a47508134f, type: 3}
       propertyPath: m_Name
       value: Player
@@ -628,6 +664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MinSpawnDelay: 1
   MaxSpawnDelay: 3
+  SpawnHeight: 4
   EnemyPrefabs:
   - {fileID: 6016129691802782246, guid: 9e4cb7efcc5bc10498dc152bf56b6726, type: 3}
   - {fileID: 6016129691802782246, guid: 8a8ecfae7bbdb2c4786ff4a447028086, type: 3}
