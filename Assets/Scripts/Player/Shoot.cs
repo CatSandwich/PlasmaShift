@@ -1,5 +1,6 @@
 using System.Collections;
 using Damage;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 namespace Player
@@ -17,19 +18,17 @@ namespace Player
         public AudioSource rechargeSource;
         public AudioClip[] rechargeClips;
         private const double RECHARGE_OFFSET = 0.72925d; //No time for audio metadata
-
-        float lastShootTime = 0;
-        bool duringAnimation = false;
         
         IEnumerator Start()
         {
-            while (true)
+			shootMaterial.SetFloat("_Hit", 0);
+			shootMaterial.SetFloat("_Opacity", 1);
+
+			while (true)
             {
                 yield return new WaitUntil(() => Input.GetMouseButton(0));
 
                 //We are now shooting
-                lastShootTime = Time.time;
-                duringAnimation = true;
                 ScreenShake.StartShake();
 				Vector3 click = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 
@@ -47,27 +46,35 @@ namespace Player
                 
                 //Raycast
                 Sender.Raycast(click - transform.position);
-                yield return new WaitForSeconds(SHOOT_RECHARGE_TIME);
+                yield return StartCoroutine(Reload());
 
             }
         }
 
-		private void Update()
-		{   
-            if (duringAnimation)
-            {
-				float timeDist = Time.time - lastShootTime;
+		private IEnumerator Reload()
+		{
+			float destTime = Time.time + SHOOT_RECHARGE_TIME;
 
-				if (timeDist > shootAnimationTime)
+			while (Time.time < destTime)
+			{
+				yield return null;
+				float progress = 1 - ((destTime - Time.time) / SHOOT_RECHARGE_TIME);
+
+                if (progress < shootAnimationTime)
                 {
-                    duringAnimation = false;
-                    shootMaterial.SetFloat("_Hit", 0);
-				}
+                    float hit = (shootAnimationTime - progress) / shootAnimationTime;
+                    shootMaterial.SetFloat("_Hit", hit);
+                    shootMaterial.SetFloat("_Opacity", hit);
+                }
                 else
                 {
-					shootMaterial.SetFloat("_Hit", 1 - timeDist / shootAnimationTime);
-				}
-			}
+					shootMaterial.SetFloat("_Hit", 0);
+					shootMaterial.SetFloat("_Opacity", Mathf.Pow(progress, 10));
+                }
+            }
+
+			shootMaterial.SetFloat("_Hit", 0);
+			shootMaterial.SetFloat("_Opacity", 1);
 		}
 	}
 }
