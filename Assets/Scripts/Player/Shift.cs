@@ -1,36 +1,41 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Helpers;
+using UnityEngine;
 
-public class Shift : MonoBehaviour
+namespace Player
 {
-	public float cooldown = 3;
-	public float distance = 3;
-
-	IEnumerator Start()
+	public class Shift : MonoBehaviour
 	{
-		var circleCollider = GetComponent<CircleCollider2D>();
-		var particleSpawner = GetComponent<SpawnParticle>();
-		var radius = circleCollider.radius;
-		var rect = new Rect(radius, radius, ResolutionHelper.cameraWorldBounds.x - radius, ResolutionHelper.cameraWorldBounds.y - radius);
+		public float cooldown = 3;
+		public float distance = 3;
 
-		while (true)
+		IEnumerator Start()
 		{
-			yield return new WaitUntil(() => Input.GetMouseButtonDown(1));
+			var particleSpawner = GetComponent<SpawnParticle>();
+			var radius = GetComponent<CircleCollider2D>().radius;
 
-			Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			mousePos.z = transform.position.z;
-			Vector3 playerToMouse = (mousePos - transform.position).normalized * distance;
-			Vector3 playerPos = transform.position;
-
-			for (float i = 0; i <= 1; i += 1 / 10f)
+			while (true)
 			{
-				transform.position = playerPos + playerToMouse * i;
-				particleSpawner.Run();
-			}
+				yield return new WaitUntil(() => Input.GetKey(KeyCode.Space));
 
-			yield return new WaitForSeconds(cooldown);
+				Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+				mousePos.z = transform.position.z;
+			
+				Vector3 playerToMouse = mousePos - transform.position;
+				float clampedDistance = Mathf.Min(distance, playerToMouse.magnitude);
+			
+				Vector3 playerPos = transform.position;
+				Vector3 dest = playerPos + playerToMouse.normalized * clampedDistance;
+				dest = dest.ClampToScreenBounds(radius);
+
+				for (float i = 0; i <= 1; i += 1 / 10f)
+				{
+					transform.position = Vector3.MoveTowards(playerPos, dest, clampedDistance * i);
+					particleSpawner.Run();
+				}
+
+				yield return new WaitForSeconds(cooldown);
+			}
 		}
 	}
 }
