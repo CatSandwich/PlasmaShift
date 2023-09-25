@@ -488,9 +488,9 @@ MonoBehaviour:
   littleVeinFreq: 13.7
   littleVeinSpeed: 0.24
   littleVeinSpawn: 28.48
-  bigVeinFreq: 38.9
+  bigVeinFreq: 39
   bigVeinSpeed: 0.72
-  bigVeinSpawn: 28.48
+  bigVeinSpawn: 39.4
   littleVeins: []
   bigVeins: []
 --- !u!1 &1628956343
