@@ -35,7 +35,7 @@ public class ScreenShake : MonoBehaviour
             else
             {
                 float fraction = 1 - (shakeTime / shakeDuration);
-                transform.position += new Vector3(
+                transform.position = camPos + new Vector3(
                     (Random.value > 0.5 ? -shakeIntensity : shakeIntensity) * fraction,
 					(Random.value > 0.5 ? -shakeIntensity : shakeIntensity) * fraction,
 					0
