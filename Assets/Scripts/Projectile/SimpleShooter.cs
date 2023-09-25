@@ -1,29 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleShooter : BaseShooter
+namespace Projectile
 {
-    GameObject player;
-
-	private void Start()
+	public class SimpleShooter : BaseShooter
 	{
-        player = GameObject.FindWithTag("Player");
+		GameObject player;
+
+		private void Start()
+		{
+			player = GameObject.FindWithTag("Player");
+		}
+		
+		protected override void Shoot()
+		{
+			if (!player) return;
+			
+			timer = 0;
+			var proj = Instantiate(projectile);
+			var rb = proj.GetComponent<Rigidbody2D>();
+			rb.velocity = (player.transform.position - transform.position).normalized * speed;
+			proj.transform.position = transform.position;
+		}
 	}
-
-	protected override void Update()
-    {
-        if (!player) return;
-        base.Update();
-    }
-
-
-	protected override void Shoot()
-	{
-        timer = 0;
-        var proj = Instantiate(projectile);
-        var rb = proj.GetComponent<Rigidbody2D>();
-        rb.velocity = (player.transform.position - transform.position).normalized * speed;
-        proj.transform.position = transform.position;
-    }
 }
