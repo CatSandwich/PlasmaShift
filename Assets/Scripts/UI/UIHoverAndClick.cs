@@ -7,7 +7,7 @@ public class UIHoverAndClick : MonoBehaviour, IPointerEnterHandler
 {
 	public AudioClip UIEnterSound;
 	public AudioClip UIConfirmSound;
-	public const float UISoundVolume = 0.5f;
+	public const float UISoundVolume = 0.3f;
 
 	public void OnConfirm()
 	{
