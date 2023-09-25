@@ -4,7 +4,7 @@ namespace Helpers
 {
     public static class BoundsHelper
     {
-        public static Vector3 ClampToScreenBounds(this Vector3 point, float padding)
+        public static Vector2 ClampToScreenBounds(this Vector2 point, float padding)
         {
             Vector2 bounds = ResolutionHelper.cameraWorldBounds;
 
