@@ -1,6 +1,7 @@
 using System.Collections;
 using Helpers;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Player
 {
@@ -31,7 +32,7 @@ namespace Player
 				yield return new WaitUntil(() => Input.GetKey(KeyCode.Space));
 				ShiftAudio();
 				ShiftImpl();
-				yield return new WaitForSeconds(cooldown);
+				yield return DoProgress();
 			}
 		}
 
@@ -62,6 +63,24 @@ namespace Player
 				transform.position = Vector2.Lerp(start, dest, i);
 				ParticleSpawner.Run();
 			}
+		}
+
+		public Image progressImage;
+
+		IEnumerator DoProgress()
+		{
+			float destTime = Time.time + cooldown;
+
+			progressImage.gameObject.SetActive(true);
+
+			while (Time.time < destTime)
+			{
+				yield return null;
+				float progress = (destTime - Time.time) / cooldown;
+				progressImage.fillAmount = progress;
+			}
+
+			progressImage.gameObject.SetActive(false);
 		}
 	}
 }
