@@ -11,7 +11,7 @@ Shader "Unlit/Alien"
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags { "RenderType"="Opaque" "Queue"="Overlay"}
         LOD 100
 
         Pass
