@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: a4e6ff2d820137d47af40503ef01a6a5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - UIEnterSound: {fileID: 8300000, guid: 72141590791cf1743b8b3453d851cae2, type: 3}
+  - UIConfirmSound: {fileID: 8300000, guid: c0d622db19e090845bbd5b6d70442934, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
