@@ -8,7 +8,7 @@ namespace States
     {
         public State InitialState;
 
-        public ILeaderboard Leaderboard;
+        public LocalLeaderboard Leaderboard;
         
         private State CurrentState;
 
@@ -41,8 +41,7 @@ namespace States
             DontDestroyOnLoad(gameObject);
             PushState(InitialState);
 
-            LocalLeaderboard.LoadFrom($@"{Application.persistentDataPath}\leaderboard.json")
-                .ContinueWith(task => Leaderboard = task.Result);
+            Leaderboard = LocalLeaderboard.LoadFrom($@"{Application.persistentDataPath}\leaderboard.json");
         }
 
         private void Update()

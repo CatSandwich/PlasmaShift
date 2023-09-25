@@ -14,7 +14,7 @@ namespace States
         [NonSerialized]
         public int LastScore;
 
-        private ILeaderboard Leaderboard;
+        private LocalLeaderboard Leaderboard;
         
         public override void OnEnter(GameStateMachine machine)
         {
@@ -29,11 +29,11 @@ namespace States
             SceneManager.UnloadSceneAsync("Leaderboard");
         }
 
-        private async void SceneLoaded(AsyncOperation obj)
+        private void SceneLoaded(AsyncOperation obj)
         {
-            await Leaderboard.AddEntry("You", LastScore);
-            Debug.Log(string.Join(", ", (await Leaderboard.GetEntries())
-                .Select(entry => $"{entry.Name}: {entry.Score}")));
+            Leaderboard.AddEntry("You", LastScore);
+            Debug.Log(string.Join(", ", string.Join("\n", Leaderboard.GetEntries()
+                .Select(entry => $"{entry.Name}: {entry.Score}"))));
         }
     }
 }
