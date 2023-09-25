@@ -445,11 +445,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f76ab248416d924f9c597e71f8d5d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <DifficultyUnits>k__BackingField: 1
+  <DifficultyUnits>k__BackingField: 2
   <Score>k__BackingField: 200
   Die:
     m_PersistentCalls:
       m_Calls: []
+  CurrentDifficulty: 0
 --- !u!114 &2171187882096475224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -590,7 +591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 505c35e36bfb0ad41974f47aa790d4ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentHealth: 30
+  CurrentHealth: 15
   AutoDie: 1
   Die:
     m_PersistentCalls:
@@ -599,6 +600,7 @@ MonoBehaviour:
   damageSoundClips: []
   damagePitchMin: 0
   damagePitchMax: 0
+  deathClip: {fileID: 0}
 --- !u!114 &6692477979471550799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -611,7 +613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54ad456e7530acb499ed7e69bee4a105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frequency: 3
+  frequency: 0.3
   speed: 4
   projectile: {fileID: 1386454312236346807, guid: 8ac44f35ece816146b82189406e35f5d, type: 3}
   shooterSoundSource: {fileID: 1544710629901501743}

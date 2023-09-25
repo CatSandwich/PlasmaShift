@@ -19,6 +19,9 @@ namespace Entity
         /// Invoked when this enemy dies.
         public UnityEvent Die;
 
+        /// The current difficulty of the game. Passed by the spawner.
+        public float CurrentDifficulty;
+
         private void OnDestroy()
         {
             Die.Invoke();

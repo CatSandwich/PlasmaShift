@@ -18,7 +18,7 @@ namespace Projectile
 		{
 			timer += Time.deltaTime;
 
-			if (timer > frequency)
+			if (timer > 1f / frequency)
 			{
 				timer = 0;
 

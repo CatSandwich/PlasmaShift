@@ -10,7 +10,7 @@ namespace States
 
         public LocalLeaderboard Leaderboard;
         
-        private State CurrentState;
+        public State CurrentState { get; private set; }
 
         public void PushState(State newState)
         {

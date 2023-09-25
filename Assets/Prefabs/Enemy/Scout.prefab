@@ -177,6 +177,7 @@ MonoBehaviour:
   Die:
     m_PersistentCalls:
       m_Calls: []
+  CurrentDifficulty: 0
 --- !u!114 &2171187882096475224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,6 +327,7 @@ MonoBehaviour:
   damageSoundClips: []
   damagePitchMin: 0
   damagePitchMax: 0
+  deathClip: {fileID: 0}
 --- !u!114 &8297625895720950310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7acdaf0566823498f0a6842b71e9a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frequency: 1.2
+  frequency: 0.8
   speed: 6
   projectile: {fileID: 1386454312236346807, guid: 8ac44f35ece816146b82189406e35f5d, type: 3}
   shooterSoundSource: {fileID: -4900307621435544542}
