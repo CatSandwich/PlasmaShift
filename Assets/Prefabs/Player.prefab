@@ -129,7 +129,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.1
 --- !u!50 &1315972923677826630
 Rigidbody2D:
   serializedVersion: 4
@@ -170,10 +170,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rigidbody: {fileID: 1315972923677826630}
-  Acceleration: 10
-  MaxSpeed: 5
-  SpeedFalloffFactor: 3.07
-  ChangeDirectionFactor: 5
+  Acceleration: 22
+  MaxSpeed: 12
+  SpeedFalloffFactor: 2.6
+  ChangeDirectionFactor: 3
 --- !u!114 &8699635422346779952
 MonoBehaviour:
   m_ObjectHideFlags: 0
