@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -35,7 +36,7 @@ namespace Player
             {
                 Die.Invoke();
             }
-        }
+		}
 
         private void Start()
         {
