@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25d9c237207d8424eab37ddc3691360d, type: 3}
   m_Name: Leaderboard State
   m_EditorClassIdentifier: 
+  EntryPrefab: {fileID: 9145722822847373934, guid: 54e11d5b8fb8c5d4483a50fcee2d1abb, type: 3}
   NextState: {fileID: 11400000, guid: 8e48a95ab48a9834e88276dbc15483b6, type: 2}

@@ -41,7 +41,7 @@ namespace States
             DontDestroyOnLoad(gameObject);
             PushState(InitialState);
 
-            Leaderboard = LocalLeaderboard.LoadFrom($@"{Application.persistentDataPath}\leaderboard.json");
+            Leaderboard = LocalLeaderboard.Load();
         }
 
         private void Update()

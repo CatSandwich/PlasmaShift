@@ -49,6 +49,8 @@ namespace States
 
             ScoreText = GameObject.FindWithTag("ScoreText")
                 .GetComponent<TextMeshProUGUI>();
+
+            Score = 0;
         }
 
         private void PlayerDied()

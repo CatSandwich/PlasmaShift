@@ -10,21 +10,19 @@ namespace Leaderboard
 {
     public class LocalLeaderboard
     {
-        private string FilePath;
         private List<Entry> Entries;
         
         private LocalLeaderboard()
         {
         }
 
-        public static LocalLeaderboard LoadFrom(string filePath)
+        public static LocalLeaderboard Load()
         {
             if (!PlayerPrefs.HasKey("Leaderboard"))
             {
                 Debug.LogWarning("No leaderboard found. Creating...");
                 return new LocalLeaderboard
                 {
-                    FilePath = filePath,
                     Entries = new List<Entry>
                     {
                         new() { Name = "Josh", Score = 10000 },
@@ -38,7 +36,6 @@ namespace Leaderboard
             
             return new LocalLeaderboard
             {
-                FilePath = filePath,
                 Entries = data.Entries
             };
         }
