@@ -5,9 +5,17 @@ using UnityEngine.EventSystems;
 
 public class UIHoverAndClick : MonoBehaviour, IPointerEnterHandler
 {
+	public AudioSource UIEnterSource;
 	public AudioClip UIEnterSound;
 	public AudioClip UIConfirmSound;
 	public const float UISoundVolume = 0.3f;
+
+
+	private void Start()
+	{
+		UIEnterSource.volume = UISoundVolume;
+		UIEnterSource.clip = UIEnterSound;
+	}
 
 	public void OnConfirm()
 	{
@@ -16,7 +24,9 @@ public class UIHoverAndClick : MonoBehaviour, IPointerEnterHandler
 	}
 	public void OnPointerEnter(PointerEventData eventData)
 	{
-		if (!UIEnterSound) return;
-		AudioSource.PlayClipAtPoint(UIEnterSound, Camera.main.transform.position);
+		if (!UIEnterSound && !UIEnterSource) return;
+
+		UIEnterSource.Stop(); //Redundant?
+		UIEnterSource.PlayScheduled(AudioSettings.dspTime);
 	}
 }
