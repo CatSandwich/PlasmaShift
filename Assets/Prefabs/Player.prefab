@@ -172,8 +172,8 @@ MonoBehaviour:
   Rigidbody: {fileID: 1315972923677826630}
   Acceleration: 10
   MaxSpeed: 5
-  SpeedFalloffFactor: 0.2
-  ChangeDirectionFactor: 2
+  SpeedFalloffFactor: 3.07
+  ChangeDirectionFactor: 5
 --- !u!114 &8699635422346779952
 MonoBehaviour:
   m_ObjectHideFlags: 0
