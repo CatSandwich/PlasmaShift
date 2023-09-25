@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Leaderboard
 {
-    public class LocalLeaderboard : ILeaderboard
+    public class LocalLeaderboard
     {
         private string FilePath;
         private List<Entry> Entries;
@@ -17,9 +17,9 @@ namespace Leaderboard
         {
         }
 
-        public static async Task<LocalLeaderboard> LoadFrom(string filePath)
+        public static LocalLeaderboard LoadFrom(string filePath)
         {
-            if (!File.Exists(filePath))
+            if (!PlayerPrefs.HasKey("Leaderboard"))
             {
                 Debug.LogWarning("No leaderboard found. Creating...");
                 return new LocalLeaderboard
@@ -34,26 +34,23 @@ namespace Leaderboard
                 };
             }
 
-            var data = JsonUtility.FromJson<LeaderboardData>(await File.ReadAllTextAsync(filePath));
+            LeaderboardData data = LeaderboardData.Deserialize(PlayerPrefs.GetString("Leaderboard"));
             
             return new LocalLeaderboard
             {
                 FilePath = filePath,
-                Entries = data.Entries.ToList()
+                Entries = data.Entries
             };
         }
 
-        public Task<IReadOnlyList<ILeaderboardEntry>> GetEntries()
+        public List<Entry> GetEntries()
         {
-            IReadOnlyList<ILeaderboardEntry> entries = new ReadOnlyCollection<ILeaderboardEntry>(Entries
-                .Cast<ILeaderboardEntry>()
+            return Entries
                 .OrderByDescending(entry => entry.Score)
-                .ToList());
-            
-            return Task.FromResult(entries);
+                .ToList();
         }
 
-        public async Task AddEntry(string name, int score)
+        public void AddEntry(string name, int score)
         {
             Entries.Add(new Entry
             {
@@ -61,26 +58,41 @@ namespace Leaderboard
                 Score = score
             });
 
-            await File.WriteAllTextAsync(FilePath, JsonUtility.ToJson(new LeaderboardData()
+            PlayerPrefs.SetString("Leaderboard", new LeaderboardData
             {
-                Entries = Entries.ToArray()
-            }));
+                Entries = Entries
+            }.Serialize());
         }
 
         [Serializable]
-        public class Entry : ILeaderboardEntry
+        public class Entry
         {
             public string Name;
             public int Score;
-
-            string ILeaderboardEntry.Name => Name;
-            int ILeaderboardEntry.Score => Score;
         }
 
         [Serializable]
         public class LeaderboardData
         {
-            public Entry[] Entries;
+            public List<Entry> Entries;
+
+            public static LeaderboardData Deserialize(string data)
+            {
+                return new LeaderboardData
+                {
+                    Entries = data.Split("\n")
+                        .Select(line => new Entry
+                        {
+                            Name = line.Split("|")[0],
+                            Score = int.Parse(line.Split("|")[1])
+                        }).ToList()
+                };
+            }
+
+            public string Serialize()
+            {
+                return string.Join("\n", Entries.Select(entry => $"{entry.Name}|{entry.Score}"));
+            }
         }
     }
 }
