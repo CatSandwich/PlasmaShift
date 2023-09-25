@@ -17,20 +17,16 @@ namespace Player
 			while (true)
 			{
 				yield return new WaitUntil(() => Input.GetKey(KeyCode.Space));
+			
+				Vector2 direction = GetComponent<Rigidbody2D>().velocity;
 
-				Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-				mousePos.z = transform.position.z;
-			
-				Vector3 playerToMouse = mousePos - transform.position;
-				float clampedDistance = Mathf.Min(distance, playerToMouse.magnitude);
-			
-				Vector3 playerPos = transform.position;
-				Vector3 dest = playerPos + playerToMouse.normalized * clampedDistance;
+				Vector2 playerPos = transform.position;
+				Vector2 dest = playerPos + direction.normalized * distance;
 				dest = dest.ClampToScreenBounds(radius);
 
 				for (float i = 0; i <= 1; i += 1 / 10f)
 				{
-					transform.position = Vector3.MoveTowards(playerPos, dest, clampedDistance * i);
+					transform.position = Vector2.Lerp(playerPos, dest, i);
 					particleSpawner.Run();
 				}
 
