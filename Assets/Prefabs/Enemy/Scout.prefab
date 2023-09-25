@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 9095022231256403699}
   - component: {fileID: 6742854160396535927}
   - component: {fileID: 8297625895720950310}
+  - component: {fileID: 7056278788135872063}
   m_Layer: 6
   m_Name: Scout
   m_TagString: Untagged
@@ -320,3 +321,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 1
+--- !u!114 &7056278788135872063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5774072157036200105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf7acdaf0566823498f0a6842b71e9a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frequency: 1.2
+  speed: 6
+  projectile: {fileID: 1386454312236346807, guid: 8ac44f35ece816146b82189406e35f5d, type: 3}
