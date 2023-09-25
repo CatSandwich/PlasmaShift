@@ -13,45 +13,54 @@ namespace Player
 
 		private const double RECHARGE_SOUND_MARKER = 0.99571428571d;
 
+		private Rigidbody2D Rigidbody;
+		private SpawnParticle ParticleSpawner;
+		private float Radius;
+		
 		public float cooldown = 3;
 		public float distance = 3;
 
 		IEnumerator Start()
 		{
-			var particleSpawner = GetComponent<SpawnParticle>();
-			var radius = GetComponent<CircleCollider2D>().radius;
+			Rigidbody = GetComponent<Rigidbody2D>();
+			ParticleSpawner = GetComponent<SpawnParticle>();
+			Radius = GetComponent<CircleCollider2D>().radius;
 
 			while (true)
 			{
 				yield return new WaitUntil(() => Input.GetKey(KeyCode.Space));
-
-				//Do audio
-				if (shiftSource && shiftClips.Length > 0)
-				{
-					shiftSource.Stop(); //Redundant?
-					shiftSource.clip = shiftClips[Random.Range(0, shiftClips.Length)];
-					shiftSource.Play();
-				}
-				if (shiftRechargeSource && shiftRechargeClips.Length > 0)
-				{
-					shiftRechargeSource.Stop(); //Redundant?
-					shiftRechargeSource.clip = shiftRechargeClips[Random.Range(0, shiftRechargeClips.Length)];
-					shiftRechargeSource.PlayScheduled(AudioSettings.dspTime + (cooldown - RECHARGE_SOUND_MARKER));
-				}
-
-				Vector2 direction = GetComponent<Rigidbody2D>().velocity;
-
-				Vector2 playerPos = transform.position;
-				Vector2 dest = playerPos + direction.normalized * distance;
-				dest = dest.ClampToScreenBounds(radius);
-
-				for (float i = 0; i <= 1; i += 1 / 10f)
-				{
-					transform.position = Vector2.Lerp(playerPos, dest, i);
-					particleSpawner.Run();
-				}
-
+				ShiftAudio();
+				ShiftImpl();
 				yield return new WaitForSeconds(cooldown);
+			}
+		}
+
+		private void ShiftAudio()
+		{
+			if (shiftSource && shiftClips.Length > 0)
+			{
+				shiftSource.Stop(); //Redundant?
+				shiftSource.clip = shiftClips[Random.Range(0, shiftClips.Length)];
+				shiftSource.Play();
+			}
+			if (shiftRechargeSource && shiftRechargeClips.Length > 0)
+			{
+				shiftRechargeSource.Stop(); //Redundant?
+				shiftRechargeSource.clip = shiftRechargeClips[Random.Range(0, shiftRechargeClips.Length)];
+				shiftRechargeSource.PlayScheduled(AudioSettings.dspTime + (cooldown - RECHARGE_SOUND_MARKER));
+			}
+		}
+
+		private void ShiftImpl()
+		{
+			Vector2 direction = Rigidbody.velocity;
+			Vector2 start = transform.position;
+			Vector2 dest = (start + direction.normalized * distance).ClampToScreenBounds(Radius);
+
+			for (float i = 0; i <= 1; i += 1 / 10f)
+			{
+				transform.position = Vector2.Lerp(start, dest, i);
+				ParticleSpawner.Run();
 			}
 		}
 	}
