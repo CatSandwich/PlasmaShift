@@ -24,7 +24,9 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _Scale: 2
+    - _Thickness: 7
     m_Colors:
     - _A: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _B: {r: 0.5, g: 0.5, b: 0.5, a: 1}
