@@ -25,7 +25,7 @@ namespace Player
         {
             while (true)
             {
-                yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+                yield return new WaitUntil(() => Input.GetMouseButton(0));
 
                 //We are now shooting
                 lastShootTime = Time.time;
