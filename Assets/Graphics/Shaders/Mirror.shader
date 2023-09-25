@@ -3,6 +3,7 @@
     Properties
     {
         _Hit ("Hit", Range(0, 1)) = 0
+        _Opacity ("Opacity", Range(0, 1)) = 1
     }
     SubShader
     {
@@ -40,6 +41,7 @@
             }
 
             float _Hit;
+            float _Opacity;
 
             float4 frag (v2f i) : SV_Target
             {
@@ -52,7 +54,7 @@
                 hitCol += flicker * pow(dist, 6);
                 // hitCol *= 2;
 
-                float3 col = lerp(ambientCol, hitCol, _Hit);
+                float3 col = lerp(ambientCol, hitCol, _Hit) * _Opacity;
 
                 return float4(col, 1);
             }

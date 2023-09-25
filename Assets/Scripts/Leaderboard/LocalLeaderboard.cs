@@ -25,9 +25,9 @@ namespace Leaderboard
                 {
                     Entries = new List<Entry>
                     {
-                        new() { Name = "Josh", Score = 10000 },
-                        new() { Name = "Elijah", Score = 8000 },
-                        new() { Name = "Evan", Score = 6000 }
+                        new() { Name = "Catsandwich", Score = 10000 },
+                        new() { Name = "Swifter", Score = 8000 },
+                        new() { Name = "Frautcres", Score = 6000 }
                     }
                 };
             }

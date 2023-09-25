@@ -16,7 +16,7 @@ namespace States
         public int Score
         {
             get => ScoreBacking;
-            set => ScoreText.text = $"Score: {ScoreBacking = value}";
+            set => ScoreText.text = $"score: {ScoreBacking = value}";
         }
         private int ScoreBacking;
         
