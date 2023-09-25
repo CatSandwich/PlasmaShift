@@ -307,8 +307,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5627238daf41dd54abba23377dbc4ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeDuration: 0.2
-  shakeIntensity: 0.01
+  shakeDuration: 0.4
+  shakeIntensity: 0.05
   camPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1207266297
 GameObject:
