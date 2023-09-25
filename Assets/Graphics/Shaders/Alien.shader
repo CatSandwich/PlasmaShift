@@ -8,6 +8,7 @@ Shader "Unlit/Alien"
         _D ("D", Color) = (0.5, 0.2, 0.25)
         _Thickness ("Thickness", Float) = 7
         _Scale ("Scale", Float) = 2
+        _Border ("Border", Float) = 1
     }
     SubShader
     {
@@ -50,13 +51,14 @@ Shader "Unlit/Alien"
             float3 _D;
             float _Thickness;
             float _Scale;
+            float _Border;
 
             fixed4 frag (v2f i) : SV_Target
             {
                 float f = pow(voronoi(i.uv * _Scale + _Time.y * 0.2).x, _Thickness);
                 float t = (i.uv.x + i.uv.y * 0.3) * 0.4 + _Time.y * 0.2;
                 float3 col = palette(t, _A, _B, _C, _D) * f * 4;
-                col += pow(max(max(i.uv.y, 1 - i.uv.y), max(i.uv.x, 1 - i.uv.x)), 20) * 0.75;
+                col += pow(max(max(i.uv.y, 1 - i.uv.y), max(i.uv.x, 1 - i.uv.x)), 20) * 0.75 * _Border;
                 return float4(col, 1);
             }
             ENDCG
