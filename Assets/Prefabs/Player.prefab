@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 122360675103310977}
   - component: {fileID: 7915520529957709817}
   - component: {fileID: 5320256386068146426}
-  - component: {fileID: -2090796580891656466}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -164,7 +163,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: -2090796580891656466}
+      - m_Target: {fileID: 955203958670747655}
         m_TargetAssemblyTypeName: Player.DamageFlash, Assembly-CSharp
         m_MethodName: Run
         m_Mode: 1
@@ -554,19 +553,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particle: {fileID: 2320236585053377963, guid: eee27a17c6d134b4ea2388d915952a86, type: 3}
---- !u!114 &-2090796580891656466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6453844037705846398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3930dc3fa6fb49d4f8c18ca65d0c1280, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageFlashDuration: 0.5
 --- !u!1 &8599882310081112231
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,6 +563,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3768209176868094104}
   - component: {fileID: 2460305067158327135}
+  - component: {fileID: 955203958670747655}
   m_Layer: 3
   m_Name: Visual
   m_TagString: Untagged
@@ -651,6 +638,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &955203958670747655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8599882310081112231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3930dc3fa6fb49d4f8c18ca65d0c1280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageFlashDuration: 0.5
 --- !u!1 &8990193295250423668
 GameObject:
   m_ObjectHideFlags: 0
