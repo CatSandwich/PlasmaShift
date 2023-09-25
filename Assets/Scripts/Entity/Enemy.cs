@@ -19,8 +19,7 @@ namespace Entity
         /// Invoked when this enemy dies.
         public UnityEvent Die;
 
-        /// Invokes <see cref="Die"/>.
-        public void InvokeDie()
+        private void OnDestroy()
         {
             Die.Invoke();
         }
