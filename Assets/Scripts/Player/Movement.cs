@@ -22,23 +22,16 @@ namespace Player
             if (Input.GetKey(KeyCode.D)) input += Vector2.right;
             input.Normalize();
             
+            Rigidbody.velocity *= (1 - SpeedFalloffFactor * Time.deltaTime);
+            
             // Apply ChangeDirectionFactor.
             if (Mathf.Abs(Vector2.SignedAngle(Rigidbody.velocity, input)) > 90f)
             {
                 input *= ChangeDirectionFactor;
             }
-
-            if (input == Vector2.zero)
-            {
-                // No input, apply falloff.
-                Rigidbody.velocity *= (1 - SpeedFalloffFactor * Time.deltaTime);
-            }
-            else
-            {
-                // Apply input.
-                Rigidbody.velocity += input * (Acceleration * Time.deltaTime);
-            }
             
+            // Apply input.
+            Rigidbody.velocity += input * (Acceleration * Time.deltaTime);
 
             // Clamp to max speed.
             if (Rigidbody.velocity.magnitude > MaxSpeed)
