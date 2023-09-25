@@ -5,7 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - UIEnterSound: {fileID: 8300000, guid: 72141590791cf1743b8b3453d851cae2, type: 3}
-  - UIConfirmSound: {fileID: 8300000, guid: c0d622db19e090845bbd5b6d70442934, type: 3}
+  - UIConfirmSound: {fileID: 8300000, guid: 489282457e9db8342a5c41152f4cd4ae, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
