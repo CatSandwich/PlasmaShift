@@ -1,41 +1,42 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-abstract public class BaseShooter : MonoBehaviour
+namespace Projectile
 {
-	//Common
-	protected float timer = 0;
-	public float frequency = 3;
-	public float speed = 4;
-	public GameObject projectile;
-
-	//Audio
-	public AudioSource shooterSoundSource;
-	public AudioClip[] shooterSoundClips;
-
-	protected virtual void Update()
+	public abstract class BaseShooter : MonoBehaviour
 	{
-		timer += Time.deltaTime;
+		//Common
+		protected float timer = 0;
+		public float frequency = 3;
+		public float speed = 4;
+		public GameObject projectile;
 
-		if (timer > frequency)
+		//Audio
+		public AudioSource shooterSoundSource;
+		public AudioClip[] shooterSoundClips;
+
+		protected virtual void Update()
 		{
-			timer = 0;
+			timer += Time.deltaTime;
 
-			Shoot();
-			PlaySound();
+			if (timer > frequency)
+			{
+				timer = 0;
+
+				Shoot();
+				PlaySound();
+			}
 		}
-	}
 
-	protected virtual void PlaySound()
-	{
-		if (shooterSoundSource != null && shooterSoundClips.Length > 0)
+		protected virtual void PlaySound()
 		{
-			shooterSoundSource.Stop();
-			shooterSoundSource.clip = shooterSoundClips[Random.Range(0, shooterSoundClips.Length)];
-			shooterSoundSource.PlayDelayed(Random.Range(0, Time.deltaTime)); //Prevent multiple waves from playing at the same time.
+			if (shooterSoundSource && shooterSoundClips.Length > 0)
+			{
+				shooterSoundSource.Stop();
+				shooterSoundSource.clip = shooterSoundClips[Random.Range(0, shooterSoundClips.Length)];
+				shooterSoundSource.PlayDelayed(Random.Range(0, Time.deltaTime)); //Prevent multiple waves from playing at the same time.
+			}
 		}
-	}
 
-	protected abstract void Shoot();
+		protected abstract void Shoot();
+	}
 }

@@ -38,6 +38,8 @@ namespace States
 
         private void MainSceneLoaded(AsyncOperation op)
         {
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("Main"));
+            
             GameObject.FindWithTag("Player")
                 .GetComponent<Health>()
                 .Die

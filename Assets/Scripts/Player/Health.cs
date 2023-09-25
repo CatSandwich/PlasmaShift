@@ -15,6 +15,9 @@ namespace Player
         public float damagePitchMin;
         public float damagePitchMax;
 
+        public AudioClip deathClip;
+        private float DEATH_VOLUME = 0.5f;
+
 
         public void TakeDamage(float damage)
         {
@@ -40,7 +43,21 @@ namespace Player
             {
                 Die.AddListener(() =>
                 {
+                    if (deathClip != null)
+                    {
+                        AudioSource.PlayClipAtPoint(deathClip, Camera.main.transform.position, DEATH_VOLUME);
+                    }
                     Destroy(gameObject);
+                });
+            }
+			else
+			{
+                Die.AddListener(() =>
+                {
+                    if (deathClip != null) 
+                    { 
+                        AudioSource.PlayClipAtPoint(deathClip, Camera.main.transform.position, DEATH_VOLUME); 
+                    }
                 });
             }
         }

@@ -410,6 +410,7 @@ GameObject:
   - component: {fileID: 1509948722}
   - component: {fileID: 1509948721}
   - component: {fileID: 1509948724}
+  - component: {fileID: 1509948725}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -493,6 +494,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1509948725}
+        m_TargetAssemblyTypeName: UIHoverAndClick, Assembly-CSharp
+        m_MethodName: OnConfirm
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1509948722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,6 +557,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   State: {fileID: 11400000, guid: c40aa30379563884eb50df4a2f6d641a, type: 2}
+--- !u!114 &1509948725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509948719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e6ff2d820137d47af40503ef01a6a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIEnterSound: {fileID: 8300000, guid: 72141590791cf1743b8b3453d851cae2, type: 3}
+  UIConfirmSound: {fileID: 8300000, guid: c0d622db19e090845bbd5b6d70442934, type: 3}
 --- !u!1 &1616658545
 GameObject:
   m_ObjectHideFlags: 0
