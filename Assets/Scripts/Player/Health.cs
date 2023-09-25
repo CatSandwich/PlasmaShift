@@ -22,6 +22,12 @@ namespace Player
 
         public void TakeDamage(float damage)
         {
+            // If already dead, ignore further damage.
+            if (CurrentHealth <= 0)
+            {
+                return;
+            }
+            
             CurrentHealth -= damage;
 
             if (damageSoundSource != null && damageSoundClips.Length > 0)
